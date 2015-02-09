@@ -2,12 +2,26 @@
     ViewBag.Title = "Immunization";
 }
 
-    <h1>Immunization</h1>
-    <img src="~/Images/website_pic3.jpg" width="250px" height="200px" />
-    <p>
-        The Vaccine and International Travel Center can provide
-        the following vaccines to adults and adolescents:
-    </p>
+<div class="row">&nbsp;</div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+        <h3>Immunization</h3>
+    </div>
+</div>
+
+<div class="row"><div class="col-md-offset-2 col-md-8"><hr /></div></div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+
+    <center><img src="~/Images/website_pic3.jpg" width="50%"/>
+        <p>
+            The Vaccine and International Travel Center can provide
+            the following vaccines to adults and adolescents:
+        </p>
+        </center>
+    
     <ul>
         <li><a href="http://www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-a.pdf" target="_blank">Hepatitis A</a></li>
         <li><a href="http://www.cdc.gov/vaccines/hcp/vis/vis-statements/hep-b.pdf" target="_blank">Hepatatis B</a></li>
@@ -27,9 +41,12 @@
         <li><a href="http://www.cdc.gov/vaccines/hcp/vis/vis-statements/typhoid.pdf" target="_blank">Typhoid</a></li>
         <li><a href="http://www.cdc.gov/vaccines/hcp/vis/vis-statements/yf.pdf" target="_blank">Yellow Fever</a></li>
         <li><a href="http://www.cdc.gov/vaccines/hcp/vis/vis-statements/varicella.pdf" target="_blank">Varicella</a></li>
-    <p>
+        <br />
+    <center><p>
         We are a state-certified yellow fever vaccine site and
         will provide you with the required yellow card following immunization.
-    </p>
+    </p></center>
     @Html.ActionLink("More about our Services", "Services", "Home")
+</div>
+</div>
 

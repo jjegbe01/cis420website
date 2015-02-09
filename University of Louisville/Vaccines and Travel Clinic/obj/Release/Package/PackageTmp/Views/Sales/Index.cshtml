@@ -4,15 +4,33 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row">&nbsp;</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <h3>Sales</h3>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <a class="btn btn-success pull-right" href="@Url.Action("Create")">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            Add Sale
+        </a>
+    </div>
+</div>
+
+<div class="row">&nbsp;</div>
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <table class="table table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Customer.City)
+            @Html.DisplayNameFor(model => model.Customer.DisplayAddress)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Location.Name)
@@ -26,7 +44,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Customer.City)
+            @Html.DisplayFor(modelItem => item.Customer.DisplayAddress)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Location.Name)
@@ -34,12 +52,37 @@
         <td>
             @Html.DisplayFor(modelItem => item.Date)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
+            <td class="text-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-cog text-warning"></span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li>
+                            <a href="@Url.Action("Details", new { id = item.ID })">
+                                <span class="glyphicon glyphicon-comment"></span>
+                                Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Edit", new { id = item.ID })">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                Edit
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="@Url.Action("Delete", new { id = item.ID })">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
     </tr>
 }
 
 </table>
+</div>
+</div>

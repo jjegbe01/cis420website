@@ -8,7 +8,7 @@ using System.Data.SqlTypes;
 
 namespace Vaccines_and_Travel_Clinic.DAL
 {
-    public class ClinicInitializer : System.Data.Entity.DropCreateDatabaseAlways<ClinicContext>
+    public class ClinicInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ClinicContext>
     {
         protected override void Seed(ClinicContext context)
         {
@@ -26,11 +26,11 @@ namespace Vaccines_and_Travel_Clinic.DAL
 
             var order = new List<Order>
             {
-                new Order{ Date = DateTime.Now.AddDays(-1), SupplierID = 1, Recieved = DateTime.Parse(SqlDateTime.MinValue.ToString()) },
-                new Order{ Date = DateTime.Now.AddDays(-2), SupplierID = 2, Recieved = DateTime.Parse(SqlDateTime.MinValue.ToString()) },
-                new Order{ Date = DateTime.Now.AddDays(-3), SupplierID = 3, Recieved = DateTime.Parse(SqlDateTime.MinValue.ToString()) },
-                new Order{ Date = DateTime.Now.AddDays(-4), SupplierID = 4, Recieved = DateTime.Parse(SqlDateTime.MinValue.ToString()) },
-                new Order{ Date = DateTime.Now.AddDays(-5), SupplierID = 5, Recieved = DateTime.Parse(SqlDateTime.MinValue.ToString()) }
+                new Order{ Date = DateTime.Now.AddDays(-1), SupplierID = 1 },
+                new Order{ Date = DateTime.Now.AddDays(-2), SupplierID = 2 },
+                new Order{ Date = DateTime.Now.AddDays(-3), SupplierID = 3 },
+                new Order{ Date = DateTime.Now.AddDays(-4), SupplierID = 4 },
+                new Order{ Date = DateTime.Now.AddDays(-5), SupplierID = 5 }
             };
 
             order.ForEach(o => context.Orders.Add(o));
@@ -38,11 +38,11 @@ namespace Vaccines_and_Travel_Clinic.DAL
 
             var item = new List<Item>
             {
-                new Item{ Name = "Vaccine One", Description = "ABCDE", Count = 100, Price = 10 },
-                new Item{ Name = "Vaccine Two", Description = "FGHIJ", Count = 200, Price = 20 },
-                new Item{ Name = "Vaccine Three", Description = "KLMNO", Count = 300, Price = 30 },
-                new Item{ Name = "Vaccine Four", Description = "PQRST", Count = 400, Price = 40 },
-                new Item{ Name = "Vaccine Five", Description = "UVWXY", Count = 500, Price = 50 }
+                new Item{ Name = "Vaccine One", Description = "ABCDE", Count = 100, Price = 10.00M },
+                new Item{ Name = "Vaccine Two", Description = "FGHIJ", Count = 200, Price = 20.00M },
+                new Item{ Name = "Vaccine Three", Description = "KLMNO", Count = 300, Price = 30.00M },
+                new Item{ Name = "Vaccine Four", Description = "PQRST", Count = 400, Price = 40.00M },
+                new Item{ Name = "Vaccine Five", Description = "UVWXY", Count = 500, Price = 50.00M }
             };
 
             item.ForEach(i => context.Items.Add(i));
@@ -50,11 +50,11 @@ namespace Vaccines_and_Travel_Clinic.DAL
 
             var orderline = new List<OrderLine>
             {
-                new OrderLine{ OrderID = 1, ItemID = 1, Quantity = 11, Price = 100 },
-                new OrderLine{ OrderID = 2, ItemID = 2, Quantity = 22, Price = 200 },
-                new OrderLine{ OrderID = 3, ItemID = 3, Quantity = 33, Price = 300 },
-                new OrderLine{ OrderID = 4, ItemID = 4, Quantity = 44, Price = 400 },
-                new OrderLine{ OrderID = 5,ItemID = 5, Quantity = 55, Price = 500 },
+                new OrderLine{ OrderID = 1, ItemID = 1, Quantity = 11, Price = 100.00M },
+                new OrderLine{ OrderID = 2, ItemID = 2, Quantity = 22, Price = 200.00M },
+                new OrderLine{ OrderID = 3, ItemID = 3, Quantity = 33, Price = 300.00M },
+                new OrderLine{ OrderID = 4, ItemID = 4, Quantity = 44, Price = 400.00M },
+                new OrderLine{ OrderID = 5,ItemID = 5, Quantity = 55, Price = 500.00M },
             };
 
             orderline.ForEach(ol => context.OrderLines.Add(ol));
@@ -98,11 +98,11 @@ namespace Vaccines_and_Travel_Clinic.DAL
 
             var saleline = new List<SaleLine>
             {
-                new SaleLine{ SaleID = 1, ItemID = 1, Quantity = 1, Price = 10 },
-                new SaleLine{ SaleID = 2, ItemID = 2, Quantity = 2, Price = 20 },
-                new SaleLine{ SaleID = 3, ItemID = 3, Quantity = 3, Price = 30 },
-                new SaleLine{ SaleID = 4, ItemID = 4, Quantity = 4, Price = 40 },
-                new SaleLine{ SaleID = 5, ItemID = 5, Quantity = 5, Price = 50 }
+                new SaleLine{ SaleID = 1, ItemID = 1, Quantity = 1, Price = 10.00M },
+                new SaleLine{ SaleID = 2, ItemID = 2, Quantity = 2, Price = 20.00M },
+                new SaleLine{ SaleID = 3, ItemID = 3, Quantity = 3, Price = 30.00M },
+                new SaleLine{ SaleID = 4, ItemID = 4, Quantity = 4, Price = 40.00M },
+                new SaleLine{ SaleID = 5, ItemID = 5, Quantity = 5, Price = 50.00M }
             };
 
             saleline.ForEach(sl => context.SaleLines.Add(sl));

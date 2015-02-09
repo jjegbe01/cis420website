@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=Clinic1;Integrated Security=SSPI" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="\\\\psf\\Home\\Desktop\\University\ of\ Louisville\\Vaccines\ and\ Travel\ Clinic\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Github\\cis420website\\University\ of\ Louisville\\Vaccines\ and\ Travel\ Clinic\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
-  <parameter name="ClinicContext-Web.config Connection String" description="ClinicContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=Clinic1;Integrated Security=SSPI" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="\\\\psf\\Home\\Desktop\\University\ of\ Louisville\\Vaccines\ and\ Travel\ Clinic\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ClinicContext']/@connectionString" />
-  </parameter>
-  <parameter name="Models-Web.config Connection String" description="Models Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\v11.0; Initial Catalog=Models-20150204150203; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|Models-20150204150203.mdf" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="\\\\psf\\Home\\Desktop\\University\ of\ Louisville\\Vaccines\ and\ Travel\ Clinic\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Models']/@connectionString" />
+  <parameter name="ClinicContext-Web.config Connection String" description="ClinicContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=Clinic2;Integrated Security=SSPI" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Github\\cis420website\\University\ of\ Louisville\\Vaccines\ and\ Travel\ Clinic\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ClinicContext']/@connectionString" />
   </parameter>
 </parameters>

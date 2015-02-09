@@ -2,9 +2,64 @@
     ViewBag.Title = "Home Page";
 }
 
+<div class="row">&nbsp;</div>
 
-    <h1>Welcome to the Vaccine and International Travel Center</h1>
-    <img src="~/Images/ambulatory.jpg" />
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+                    <img src="http://uoflvaccinesandtravel.com/images/Travelgroup.jpg" alt="Travel Group" height="310px" width="440px">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Welcome to the International Vaccine and Travel Center</h1>
+              <p class="lead">Our team of specialists are trained to fulfill all your illness prevention needs.</p>
+              <a class="btn btn-large btn-primary" href="@Url.Action("Services", "Home")">View Our Services</a>
+            </div>
+          </div>
+        </div>
+@*        <div class="item">
+            <img src="http://uoflvaccinesandtravel.com/img/wwb-logo.JPG" alt="Water With Blessings Logo">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="btn btn-large btn-primary" href="#">Learn more</a>
+            </div>
+          </div>
+        </div>*@
+        <div class="item">
+<img src="http://uoflvaccinesandtravel.com/img/ambulatory.jpeg" alt="">
+
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+
+@*
+<div class="row">&nbsp;</div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+        <h3>Welcome to the Vaccine and Internation Travel Center</h3>
+    </div>
+</div>
+
+<div class="row"><div class="col-md-offset-2 col-md-8"><hr /></div></div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+
+
+
     <h6>Located in the 550 Clinic, at the U of L Ambulatory Care Building</h6>
     <p>
         Preventing illness is the cornerstone of healthcare whether at home or when traveling.
@@ -40,8 +95,11 @@
             Because we specialize in vaccines and immunization programs, we are confident that the scope and quality of our services exceed those provided anywhere.  We are full service, high quality, rapid access, and affordable.
             To learn more about us and the comprehensive services we provide, please take a look at the information included in our website.
         </p>
+    </div>
+</div>
 
-    @*<div class="jumbotron">
+
+    <div class="jumbotron">
             <h1>ASP.NET Identity</h1>
             <p class="lead">ASP.NET Identity is the membership system for ASP.NET apps. Following are the features of ASP.NET Identity in this sample application.</p>
             <p><a href="http://www.asp.net/identity" class="btn btn-primary btn-large">Learn more &raquo;</a></p>

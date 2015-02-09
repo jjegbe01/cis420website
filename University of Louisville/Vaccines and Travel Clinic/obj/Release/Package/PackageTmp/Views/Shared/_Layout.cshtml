@@ -77,14 +77,17 @@
                 @RenderBody()
                 <hr />
                 <footer>
-                    <p style="text-align:center">&copy; @DateTime.Now.Year - University of Louisville, Division of Infectious Diseases. All Rights Reserved.</p>               
-                    <p style="text-align:right">
+                        <div class="container-fluid"> 
+                                 <p style="text-align:right">
                         Vaccine and International Travel Center<br />
                         Located in the 550 Clinic<br />
                         550 S. Jackson Street<br />
                         Ambulatory Care Building, 2nd Floor <br />
                         Louisville, KY  40202<br />
-                    </p>                    
+                        <a class="btn btn-xs btn-primary" href="@Url.Action("Contact", "Home")">Google Maps</a>
+                    </p>
+  <p style="text-align:center">&copy; @DateTime.Now.Year - University of Louisville, Division of Infectious Diseases. All Rights Reserved.</p>
+                        </div>    
                 </footer>
             </div>
             @Scripts.Render("~/bundles/jquery")
