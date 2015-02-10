@@ -30,6 +30,9 @@
         <table class="table table-striped">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
             @Html.DisplayName("Customer Locale")
             @*@Html.DisplayNameFor(model => model.Customer.DisplayAddress)*@
         </th>
@@ -45,6 +48,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Customer.DisplayAddress)
         </td>
