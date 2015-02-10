@@ -40,7 +40,7 @@ namespace Vaccines_and_Travel_Clinic.Controllers
         // GET: Sales/Create
         public ActionResult Create()
         {
-            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "City");
+            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "DisplayAddress");
             ViewBag.LocationID = new SelectList(db.Locations, "ID", "Name");
             return View();
         }
@@ -59,7 +59,7 @@ namespace Vaccines_and_Travel_Clinic.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "City", sale.CustomerID);
+            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "DisplayAddress", sale.CustomerID);
             ViewBag.LocationID = new SelectList(db.Locations, "ID", "Name", sale.LocationID);
             return View(sale);
         }
@@ -76,7 +76,7 @@ namespace Vaccines_and_Travel_Clinic.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "City", sale.CustomerID);
+            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "DisplayAddress", sale.CustomerID);
             ViewBag.LocationID = new SelectList(db.Locations, "ID", "Name", sale.LocationID);
             return View(sale);
         }
@@ -94,7 +94,7 @@ namespace Vaccines_and_Travel_Clinic.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "City", sale.CustomerID);
+            ViewBag.CustomerID = new SelectList(db.Customers, "ID", "DisplayAddress", sale.CustomerID);
             ViewBag.LocationID = new SelectList(db.Locations, "ID", "Name", sale.LocationID);
             return View(sale);
         }

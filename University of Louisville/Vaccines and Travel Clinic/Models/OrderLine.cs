@@ -11,6 +11,7 @@ namespace Vaccines_and_Travel_Clinic.Models
         public int ID { get; set; }
 
         [Required]
+        [Display(Name="Order Number")]
         public int OrderID { get; set; }
 
         [Required]

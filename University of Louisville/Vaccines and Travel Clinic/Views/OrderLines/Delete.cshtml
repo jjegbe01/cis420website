@@ -19,7 +19,17 @@
 <div>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Item.Name)
+            @Html.DisplayName("Order Number")
+            @*@Html.DisplayNameFor(model => model.OrderID)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Item Name")
+            @*@Html.DisplayNameFor(model => model.Item.Name)*@
         </dt>
 
         <dd>

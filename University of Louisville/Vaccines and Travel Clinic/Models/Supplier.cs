@@ -34,6 +34,7 @@ namespace Vaccines_and_Travel_Clinic.Models
         [Required]
         public string State { get; set; }
 
+        [Required]
         [DataType(DataType.PostalCode)]
         public string Zip { get; set; }
         

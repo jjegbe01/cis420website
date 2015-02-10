@@ -15,14 +15,14 @@ namespace Vaccines_and_Travel_Clinic.Controllers
     {
         private ClinicContext db = new ClinicContext();
 
-        // GET: SaleLines
+        // GET: SaleLines1
         public ActionResult Index()
         {
-            var saleLines = db.SaleLines.Include(s => s.Item);
+            var saleLines = db.SaleLines.Include(s => s.Item).Include(s => s.Sale);
             return View(saleLines.ToList());
         }
 
-        // GET: SaleLines/Details/5
+        // GET: SaleLines1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,19 +37,20 @@ namespace Vaccines_and_Travel_Clinic.Controllers
             return View(saleLine);
         }
 
-        // GET: SaleLines/Create
+        // GET: SaleLines1/Create
         public ActionResult Create()
         {
             ViewBag.ItemID = new SelectList(db.Items, "ID", "Name");
+            ViewBag.SaleID = new SelectList(db.Sales, "ID", "ID");
             return View();
         }
 
-        // POST: SaleLines/Create
+        // POST: SaleLines1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ItemID,Quantity,Price")] SaleLine saleLine)
+        public ActionResult Create([Bind(Include = "ID,SaleID,ItemID,Quantity,Price")] SaleLine saleLine)
         {
             if (ModelState.IsValid)
             {
@@ -59,10 +60,11 @@ namespace Vaccines_and_Travel_Clinic.Controllers
             }
 
             ViewBag.ItemID = new SelectList(db.Items, "ID", "Name", saleLine.ItemID);
+            ViewBag.SaleID = new SelectList(db.Sales, "ID", "ID", saleLine.SaleID);
             return View(saleLine);
         }
 
-        // GET: SaleLines/Edit/5
+        // GET: SaleLines1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,15 +77,16 @@ namespace Vaccines_and_Travel_Clinic.Controllers
                 return HttpNotFound();
             }
             ViewBag.ItemID = new SelectList(db.Items, "ID", "Name", saleLine.ItemID);
+            ViewBag.SaleID = new SelectList(db.Sales, "ID", "ID", saleLine.SaleID);
             return View(saleLine);
         }
 
-        // POST: SaleLines/Edit/5
+        // POST: SaleLines1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ItemID,Quantity,Price")] SaleLine saleLine)
+        public ActionResult Edit([Bind(Include = "ID,SaleID,ItemID,Quantity,Price")] SaleLine saleLine)
         {
             if (ModelState.IsValid)
             {
@@ -92,10 +95,11 @@ namespace Vaccines_and_Travel_Clinic.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ItemID = new SelectList(db.Items, "ID", "Name", saleLine.ItemID);
+            ViewBag.SaleID = new SelectList(db.Sales, "ID", "ID", saleLine.SaleID);
             return View(saleLine);
         }
 
-        // GET: SaleLines/Delete/5
+        // GET: SaleLines1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,7 +114,7 @@ namespace Vaccines_and_Travel_Clinic.Controllers
             return View(saleLine);
         }
 
-        // POST: SaleLines/Delete/5
+        // POST: SaleLines1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
