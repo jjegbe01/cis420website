@@ -35,15 +35,6 @@ namespace Vaccines_and_Travel_Clinic.Models
         [Required]
         public string Origin { get; set; }
 
-        [Required]
-        public int AcessCode { get; set; }
-
-        [Required]
-        public string Telephone { get; set; }
-
-        [Required]
-        public string Email { get; set; }
-
         public virtual ICollection<Sale> Sales { get; set; }
 
         [Display(Name = "Address")]
