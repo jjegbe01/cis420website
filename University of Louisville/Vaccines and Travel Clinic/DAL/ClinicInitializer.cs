@@ -74,11 +74,11 @@ namespace Vaccines_and_Travel_Clinic.DAL
 
             var customer = new List<Customer>
             {
-                new Customer{ AccessCode= "1", City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Caucasion", Age = 11, Gender = "Male", Origin = "Italy" },
-                new Customer{ AccessCode= "2", City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "African American", Age = 22, Gender = "Female", Origin = "France" },
-                new Customer{ AccessCode= "3", City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Hispanic", Age = 33, Gender = "Male", Origin = "Germany" },
-                new Customer{ AccessCode= "4", City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Mongolian", Age = 44, Gender = "Female", Origin = "Spain" },
-                new Customer{ AccessCode= "5", City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Asian", Age = 55, Gender = "Male", Origin = "Ireland" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Caucasion", Age = 11, Gender = "Male", Origin = "Italy" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "African American", Age = 22, Gender = "Female", Origin = "France" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Hispanic", Age = 33, Gender = "Male", Origin = "Germany" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Mongolian", Age = 44, Gender = "Female", Origin = "Spain" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Asian", Age = 55, Gender = "Male", Origin = "Ireland" },
             };
 
             customer.ForEach(c => context.Customers.Add(c));
