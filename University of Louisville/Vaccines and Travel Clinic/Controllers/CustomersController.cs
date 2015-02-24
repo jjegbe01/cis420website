@@ -47,7 +47,7 @@ namespace Vaccines_and_Travel_Clinic.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,City,State,Zip,Country,Race,Age,Gender,Origin")] Customer customer)
+        public ActionResult Create([Bind(Include = "ID,City,State,Zip,Country,Race,Age,Gender,Origin,AcessCode")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace Vaccines_and_Travel_Clinic.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,City,State,Zip,Country,Race,Age,Gender,Origin")] Customer customer)
+        public ActionResult Edit([Bind(Include = "ID,City,State,Zip,Country,Race,Age,Gender,Origin,AcessCode")] Customer customer)
         {
             if (ModelState.IsValid)
             {
