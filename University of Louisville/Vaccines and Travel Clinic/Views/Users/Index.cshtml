@@ -4,25 +4,33 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row">&nbsp;</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <h3>Users</h3>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <a class="btn btn-success pull-right" href="@Url.Action("Create")">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            Add User
+        </a>
+    </div>
+</div>
+
+<div class="row">&nbsp;</div>
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <table class="table table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DisplayName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DisplayDOB)
-        </th>
-        @*Add a table header for the Address info:*@
-        <th>
-            @Html.DisplayNameFor(model => model.DisplayAddress)
         </th>
         <th>
 
@@ -35,22 +43,37 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DisplayName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DisplayDOB)
-            </td>
-            <td>
-                @*Add table data for the Address info:*@
-                @Html.DisplayFor(modelItem => item.DisplayAddress)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            <td class="pull-right">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-cog text-warning"></span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li>
+                            <a href="@Url.Action("Details", new { id = item.Id })">
+                                <span class="glyphicon glyphicon-comment"></span>
+                                Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Edit", new { id = item.Id })">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                Edit
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="@Url.Action("Delete", new { id = item.Id })">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </td>
         </tr>
     }
 
 </table>
+</div>
+</div>
