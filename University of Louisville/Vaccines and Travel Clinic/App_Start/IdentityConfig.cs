@@ -10,15 +10,14 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web;
-using IdentitySample.Models;
 
 namespace IdentitySample.Models
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 
-    public class ApplicationUserManager : UserManager<ApplicationUser, string>
+    public class ApplicationUserManager : UserManager<ApplicationUser>
     {
-        public ApplicationUserManager(IUserStore<ApplicationUser, string> store)
+        public ApplicationUserManager(IUserStore<ApplicationUser> store)
             : base(store)
         {
         }
@@ -26,7 +25,7 @@ namespace IdentitySample.Models
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,
             IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser, ApplicationRole, string, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
@@ -72,14 +71,14 @@ namespace IdentitySample.Models
     // Configure the RoleManager used in the application. RoleManager is defined in the ASP.NET Identity core assembly
     public class ApplicationRoleManager : RoleManager<ApplicationRole>
     {
-        public ApplicationRoleManager(IRoleStore<ApplicationRole, string> roleStore)
+        public ApplicationRoleManager(IRoleStore<ApplicationRole,string> roleStore)
             : base(roleStore)
         {
         }
 
         public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
         {
-            return new ApplicationRoleManager(new ApplicationRoleStore(context.Get<ApplicationDbContext>()));
+            return new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<ApplicationDbContext>()));
         }
     }
 
@@ -102,7 +101,7 @@ namespace IdentitySample.Models
     }
 
     // This is useful if you do not want to tear down the database each time you run the application.
-    // public class ApplicationDbInitializer : DatabaseAlways<ApplicationDbContext>
+    // public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
     // This example shows you how to create a new database if the Model changes
     public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext> 
     {

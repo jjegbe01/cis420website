@@ -4,64 +4,80 @@ using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using System;
 
 namespace IdentitySample.Models
 {
-    // You will not likely need to customize there, but it is necessary/easier to create our own 
-    // project-specific implementations, so here they are:
-    public class ApplicationUserLogin : IdentityUserLogin<string> { }
-    public class ApplicationUserClaim : IdentityUserClaim<string> { }
-    public class ApplicationUserRole : IdentityUserRole<string> { }
-
-    // Must be expressed in terms of our custom Role and other types:
-    public class ApplicationUser 
-        : IdentityUser<string, ApplicationUserLogin, 
-        ApplicationUserRole, ApplicationUserClaim>
+    public class ApplicationUser : IdentityUser
     {
-        public ApplicationUser()
-        {
-            this.Id = Guid.NewGuid().ToString();
-
-            // Add any custom User properties/code here
-        }
-
-
-        public async Task<ClaimsIdentity>
-            GenerateUserIdentityAsync(ApplicationUserManager manager)
+        public async Task<ClaimsIdentity> 
+            GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             var userIdentity = await manager
                 .CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             return userIdentity;
         }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        
+        [Display(Name = "Date of Birth")]
+        public string DateOfBirth { get; set; }
+
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+
+        // Use a sensible display name for views:
+        [Display(Name = "Zip Code")]
+        public string PostalCode { get; set; }
+
+        // Concatenate the address info for display in tables and such:
+        public string DisplayAddress
+        {
+            get
+            {
+                string dspAddress = string.IsNullOrWhiteSpace(this.Address) ? string.Empty : this.Address;
+                string dspCity = string.IsNullOrWhiteSpace(this.City) ? string.Empty : this.City;
+                string dspState = string.IsNullOrWhiteSpace(this.State) ? string.Empty : this.State;
+                string dspPostalCode = string.IsNullOrWhiteSpace(this.PostalCode) ? string.Empty : this.PostalCode;
+                return string.Format("{0} {1} {2} {3}", dspAddress, dspCity, dspState, dspPostalCode);
+            }
+        }
+
+        public string DisplayName
+        {
+            get
+            {
+                string dspFirstName = string.IsNullOrWhiteSpace(this.FirstName) ? string.Empty : this.FirstName;
+                string dspLastName = string.IsNullOrWhiteSpace(this.FirstName) ? string.Empty : this.LastName;
+                return string.Format("{0}, {1}", dspLastName, dspFirstName);
+            }
+        }
+
+        public string DisplayDOB
+        {
+            get
+            {
+                string dspDOB = string.IsNullOrWhiteSpace(this.DateOfBirth) ? string.Empty : this.DateOfBirth;
+                return dspDOB;
+            }
+        }
     }
 
 
-    // Must be expressed in terms of our custom UserRole:
-    public class ApplicationRole : IdentityRole<string, ApplicationUserRole>
+    public class ApplicationRole : IdentityRole
     {
-        public ApplicationRole() 
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
-
-        public ApplicationRole(string name)
-            : this()
-        {
-            this.Name = name;
-        }
-
-        // Add any custom Role properties/code here
+        public ApplicationRole() : base() { }
+        public ApplicationRole(string name) : base(name) { }
+        public string Description { get; set; }
+        
     }
 
 
-    // Must be expressed in terms of our custom types:
-    public class ApplicationDbContext 
-        : IdentityDbContext<ApplicationUser, ApplicationRole, 
-        string, ApplicationUserLogin, ApplicationUserRole, ApplicationUserClaim>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
@@ -74,46 +90,5 @@ namespace IdentitySample.Models
         {
             return new ApplicationDbContext();
         }
-
-        // Add additional items here as needed
     }
-
-    // Most likely won't need to customize these either, but they were needed because we implemented
-    // custom versions of all the other types:
-    public class ApplicationUserStore 
-        :UserStore<ApplicationUser, ApplicationRole, string,
-            ApplicationUserLogin, ApplicationUserRole, 
-            ApplicationUserClaim>, IUserStore<ApplicationUser, string>, 
-        IDisposable
-    {
-        public ApplicationUserStore()
-            : this(new IdentityDbContext())
-        {
-            base.DisposeContext = true;
-        }
-
-        public ApplicationUserStore(DbContext context)
-            : base(context)
-        {
-        }
-    }
-
-
-    public class ApplicationRoleStore
-    : RoleStore<ApplicationRole, string, ApplicationUserRole>,
-    IQueryableRoleStore<ApplicationRole, string>,
-    IRoleStore<ApplicationRole, string>, IDisposable
-    {
-        public ApplicationRoleStore()
-            : base(new IdentityDbContext())
-        {
-            base.DisposeContext = true;
-        }
-
-        public ApplicationRoleStore(DbContext context)
-            : base(context)
-        {
-        }
-    }
-
 }
