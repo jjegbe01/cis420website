@@ -30,6 +30,9 @@
         <table class="table table-striped">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.AccessCode)
+        </th>   
+        <th>
             @Html.DisplayNameFor(model => model.DisplayAddress)
         </th>
         @*<th>
@@ -61,6 +64,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccessCode)
+        </th>   
         <td>
             @Html.DisplayFor(modelItem => item.DisplayAddress)
         </td>

@@ -8,7 +8,11 @@ namespace Vaccines_and_Travel_Clinic.Models
 {
     public class Customer
     {
+        
         public int ID { get; set; }
+
+        [Required]
+        public string AccessCode { get; set; }
 
         [Required]
         public string City { get; set; }
