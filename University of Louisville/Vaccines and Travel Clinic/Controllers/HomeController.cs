@@ -58,5 +58,12 @@ namespace IdentitySample.Controllers
 
             return View();
         }
+
+        public ActionResult Repository()
+        {
+            ViewBag.Message = "Your repository page.";
+
+            return View();
+        }
     }
 }
