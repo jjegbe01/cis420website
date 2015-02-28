@@ -1,25 +1,36 @@
-﻿@model IdentitySample.Models.ApplicationRole
+﻿@model IdentitySample.Models.ApplicationGroup
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details.</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Roles.</h4>
-    <hr />
+    <h4>ApplicationGroup</h4>
+	<hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
     </dl>
 </div>
-<h4>List of users in this role</h4>
-@if (ViewBag.UserCount == 0)
+
+<h4>List of permissions granted this group</h4>
+@if (ViewBag.PermissionsCount == 0)
 {
     <hr />
     <p>No users found in this role.</p>
@@ -27,11 +38,11 @@
 
 <table class="table">
 
-    @foreach (var item in ViewBag.Users)
+    @foreach (var item in ViewBag.RolesList)
     {
         <tr>
             <td>
-                @item.UserName
+                @item
             </td>
         </tr>
     }
@@ -40,6 +51,3 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
-
-
-

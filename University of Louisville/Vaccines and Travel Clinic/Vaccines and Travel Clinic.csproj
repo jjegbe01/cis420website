@@ -222,6 +222,11 @@
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <None Include="Properties\PublishProfiles\uoflvaccinesandtravelclinic.pubxml" />
+    <Content Include="Views\Groups\Create.cshtml" />
+    <Content Include="Views\Groups\Delete.cshtml" />
+    <Content Include="Views\Groups\Details.cshtml" />
+    <Content Include="Views\Groups\Edit.cshtml" />
+    <Content Include="Views\Groups\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -295,6 +300,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
@@ -313,7 +319,10 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\ApplicationGroupManager.cs" />
+    <Compile Include="Models\ApplicationGroupStore.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\GroupStoreBase.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Location.cs" />

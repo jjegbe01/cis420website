@@ -5,7 +5,7 @@
 
 <h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("Create", "UsersAdmin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Create", "Users", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
@@ -31,32 +31,23 @@
     </div>
     <div class="form-group">
         <label class="col-md-2 control-label">
-             User Role
+            Select User Group
         </label>
         <div class="col-md-10">
-            @foreach (var item in (SelectList)ViewBag.RoleId)
+            @foreach (var item in (SelectList)ViewBag.GroupsList)
             {
-                <input type="checkbox" name="SelectedRoles" value="@item.Value" class="checkbox-inline" />
-                @Html.Label(item.Value, new { @class = "control-label" })
+                <div>
+                    <input type="checkbox" name="selectedGroups" value="@item.Value" class="checkbox-inline" />
+                    @Html.Label(item.Text, new { @class = "control-label" })
+                </div>
             }
         </div>
     </div>
-
-<div class="row">&nbsp;</div>
-
-        <div class="form-group">
-            <div class="col-md-offset-0 col-md-6">
-                <a href="@Url.Action("Index")" class="btn btn-default pull-right right-pulled-button-space">
-                    <span class="glyphicon glyphicon-remove"></span>
-                    Cancel
-                </a>
-                <button type="submit" class="btn btn-primary pull-right">
-                <span class="glyphicon glyphicon-plus-sign"></span>
-                    Save
-            </button>
-            </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Create" />
         </div>
-
+    </div>
 }
 
 @section Scripts {

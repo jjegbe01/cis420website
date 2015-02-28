@@ -4,19 +4,11 @@
     ViewBag.Title = "Details";
 }
 
-<div class="row">&nbsp;</div>
+<h2>Details.</h2>
 
-<div class="row">
-    <div class="col-md-offset-2 col-md-8">
-        <h3>Details</h3>
-    </div>
-</div>
-
-<hr />
-
-<div class="row">
-    <div class="col-md-offset-2 col-md-8">
-        <div>
+<div>
+    <h4>User</h4>
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.UserName)
@@ -26,16 +18,16 @@
         </dd>
     </dl>
 </div>
-<h4>List of roles for this user</h4>
-@if (ViewBag.RoleNames.Count == 0)
+<h4>List ofGroups this user belongs to:</h4>
+@if (ViewBag.GroupNames.Count == 0)
 {
     <hr />
-    <p>No roles found for this user.</p>
+    <p>No GRoups found for this user.</p>
 }
 
 <table class="table">
 
-    @foreach (var item in ViewBag.RoleNames)
+    @foreach (var item in ViewBag.GroupNames)
     {
         <tr>
             <td>
@@ -44,24 +36,10 @@
         </tr>
     }
 </table>
-<div class="row">&nbsp;</div>
-
-        <div class="form-group">
-            <div class="col-md-offset-1 col-md-6">
-                <a href="@Url.Action("Index")" class="btn btn-default pull-right right-pulled-button-space">
-                    <span class="glyphicon glyphicon-remove"></span>
-                    Cancel
-                </a>
-                <a href="@Url.Action("Edit")" class="btn btn-warning pull-right">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                    Edit
-                </a>
-                    
-            </button>
-            </div>
-        </div>
-    </div>
-</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
 
 
 
