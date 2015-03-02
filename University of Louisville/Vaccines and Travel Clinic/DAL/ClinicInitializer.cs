@@ -96,6 +96,15 @@ namespace Vaccines_and_Travel_Clinic.DAL
             sale.ForEach(s => context.Sales.Add(s));
             context.SaveChanges();
 
+
+            var appointment = new List<Appointment>
+            {
+                new Appointment {AppointmentId = 1, Email = "maseba01@louisville.edu", DateTime = DateTime.Now, Note = "Test" }
+            };
+
+            appointment.ForEach(s => context.Appointment.Add(s));
+            context.SaveChanges();
+
             var saleline = new List<SaleLine>
             {
                 new SaleLine{ SaleID = 1, ItemID = 1, Quantity = 1, Price = 10.00M },
@@ -108,5 +117,7 @@ namespace Vaccines_and_Travel_Clinic.DAL
             saleline.ForEach(sl => context.SaleLines.Add(sl));
             context.SaveChanges();
         }
+
+        
     }
 }
