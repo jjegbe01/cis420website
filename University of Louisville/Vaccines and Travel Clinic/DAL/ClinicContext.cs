@@ -10,7 +10,10 @@ namespace Vaccines_and_Travel_Clinic.DAL
 {
     public class ClinicContext : DbContext
     {
-        public ClinicContext() : base("ClinicContext") { }
+        public ClinicContext(string securityPartition = null, string asRole = null) : base("ClinicContext") 
+        {
+            Crypteron.CipherDb.Session.Open(this, securityPartition, asRole);
+        }
 
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Order> Orders { get; set; }

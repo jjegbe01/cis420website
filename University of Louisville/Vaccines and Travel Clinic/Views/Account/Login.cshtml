@@ -41,17 +41,9 @@
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("Register a new user?", "Register")
-                </p>
-                <p>
                     @Html.ActionLink("Forget your password?", "ForgotPassword")
                 </p>
             }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new IdentitySample.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
         </section>
     </div>
 </div>

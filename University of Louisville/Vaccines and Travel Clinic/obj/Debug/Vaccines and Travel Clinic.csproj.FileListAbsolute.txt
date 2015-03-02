@@ -338,3 +338,5 @@ C:\Github\cis420website\University of Louisville\Vaccines and Travel Clinic\bin\
 C:\Github\cis420website\University of Louisville\Vaccines and Travel Clinic\obj\Debug\Vaccines and Travel Clinic.csprojResolveAssemblyReference.cache
 C:\Github\cis420website\University of Louisville\Vaccines and Travel Clinic\obj\Debug\Vaccines_and_Travel_Clinic.dll
 C:\Github\cis420website\University of Louisville\Vaccines and Travel Clinic\obj\Debug\Vaccines_and_Travel_Clinic.pdb
+C:\Github\cis420website\University of Louisville\Vaccines and Travel Clinic\bin\CipherCore.dll
+C:\Github\cis420website\University of Louisville\Vaccines and Travel Clinic\bin\CipherDb.EF6.dll
