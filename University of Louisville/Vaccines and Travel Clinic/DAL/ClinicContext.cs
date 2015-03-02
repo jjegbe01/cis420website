@@ -21,6 +21,8 @@ namespace Vaccines_and_Travel_Clinic.DAL
         public DbSet<Location> Locations { get; set; }
         public DbSet<Customer> Customers { get; set; }
 
+        public DbSet<Appointment> Appointment { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

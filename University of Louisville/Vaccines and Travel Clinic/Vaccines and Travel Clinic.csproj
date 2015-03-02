@@ -229,6 +229,11 @@
     <Content Include="Views\Groups\Index.cshtml" />
     <Content Include="Views\Home\Repository.cshtml" />
     <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Appointment\Create.cshtml" />
+    <Content Include="Views\Appointment\Delete.cshtml" />
+    <Content Include="Views\Appointment\Edit.cshtml" />
+    <Content Include="Views\Appointment\Details.cshtml" />
+    <Content Include="Views\Appointment\Summary.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -324,6 +329,7 @@
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\ApplicationGroupManager.cs" />
     <Compile Include="Models\ApplicationGroupStore.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\GroupStoreBase.cs" />
     <Compile Include="Models\IdentityModels.cs" />
