@@ -54,7 +54,7 @@ namespace Vaccines_and_Travel_Clinic.DAL
                 new OrderLine{ OrderID = 2, ItemID = 2, Quantity = 22, Price = 200.00M },
                 new OrderLine{ OrderID = 3, ItemID = 3, Quantity = 33, Price = 300.00M },
                 new OrderLine{ OrderID = 4, ItemID = 4, Quantity = 44, Price = 400.00M },
-                new OrderLine{ OrderID = 5,ItemID = 5, Quantity = 55, Price = 500.00M },
+                new OrderLine{ OrderID = 5, ItemID = 5, Quantity = 55, Price = 500.00M },
             };
 
             orderline.ForEach(ol => context.OrderLines.Add(ol));
@@ -74,11 +74,11 @@ namespace Vaccines_and_Travel_Clinic.DAL
 
             var customer = new List<Customer>
             {
-                new Customer{ Secure_City = "Louisville", Secure_State = "Kentucky", Secure_Zip = "40228", Secure_Country = "United States", Secure_Race = "Caucasion", Secure_Age = 11, Secure_Gender = "Male", Secure_Origin = "Italy" },
-                new Customer{ Secure_City = "Louisville", Secure_State = "Kentucky", Secure_Zip = "40228", Secure_Country = "United States", Secure_Race = "African American", Secure_Age = 22, Secure_Gender = "Female", Secure_Origin = "France" },
-                new Customer{ Secure_City = "Louisville", Secure_State = "Kentucky", Secure_Zip = "40228", Secure_Country = "United States", Secure_Race = "Hispanic", Secure_Age = 33, Secure_Gender = "Male", Secure_Origin = "Germany" },
-                new Customer{ Secure_City = "Louisville", Secure_State = "Kentucky", Secure_Zip = "40228", Secure_Country = "United States", Secure_Race = "Mongolian", Secure_Age = 44, Secure_Gender = "Female", Secure_Origin = "Spain" },
-                new Customer{ Secure_City = "Louisville", Secure_State = "Kentucky", Secure_Zip = "40228", Secure_Country = "United States", Secure_Race = "Asian", Secure_Age = 55, Secure_Gender = "Male", Secure_Origin = "Ireland" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Caucasion", Age = 11, Gender = "Male", Origin = "Italy" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "African American", Age = 22, Gender = "Female", Origin = "France" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Hispanic", Age = 33, Gender = "Male", Origin = "Germany" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Mongolian", Age = 44, Gender = "Female", Origin = "Spain" },
+                new Customer{ City = "Louisville", State = "Kentucky", Zip = "40228", Country = "United States", Race = "Asian", Age = 55, Gender = "Male", Origin = "Ireland" },
             };
 
             customer.ForEach(c => context.Customers.Add(c));
@@ -97,14 +97,6 @@ namespace Vaccines_and_Travel_Clinic.DAL
             context.SaveChanges();
 
 
-            var appointment = new List<Appointment>
-            {
-                new Appointment {AppointmentId = 1, Email = "maseba01@louisville.edu", DateTime = DateTime.Now, Note = "Test" }
-            };
-
-            appointment.ForEach(s => context.Appointment.Add(s));
-            context.SaveChanges();
-
             var saleline = new List<SaleLine>
             {
                 new SaleLine{ SaleID = 1, ItemID = 1, Quantity = 1, Price = 10.00M },
@@ -116,8 +108,14 @@ namespace Vaccines_and_Travel_Clinic.DAL
 
             saleline.ForEach(sl => context.SaleLines.Add(sl));
             context.SaveChanges();
-        }
 
-        
+            var appointment = new List<Appointment>
+            {
+                new Appointment {AppointmentId = 1, Email = "maseba01@louisville.edu", DateTime = DateTime.Now, Note = "Test" }
+            };
+
+            appointment.ForEach(s => context.Appointment.Add(s));
+            context.SaveChanges();
+        }
     }
 }

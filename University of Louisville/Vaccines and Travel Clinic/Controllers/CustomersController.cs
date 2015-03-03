@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vaccines_and_Travel_Clinic.DAL;
 using Vaccines_and_Travel_Clinic.Models;
+using Crypteron.CipherCore.Entropy;
 
 namespace Vaccines_and_Travel_Clinic.Controllers
 {
