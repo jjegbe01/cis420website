@@ -37,8 +37,15 @@
     }
 </table>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyUsers"))
+    {
+        <div>@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</div>
+        <div>@Html.ActionLink("Back to List", "Index")</div>
+    }
+    else if (Request.IsAuthenticated && User.IsInRole("CanViewUsers"))
+    {
+     <div>@Html.ActionLink("Back to List", "Index")</div>   
+    }
 </p>
 
 

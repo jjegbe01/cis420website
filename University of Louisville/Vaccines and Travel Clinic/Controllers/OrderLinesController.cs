@@ -11,6 +11,7 @@ using Vaccines_and_Travel_Clinic.Models;
 
 namespace Vaccines_and_Travel_Clinic.Controllers
 {
+    [Authorize(Roles = "Admin, CanModifyInventory, CanViewInventory")]
     public class OrderLinesController : Controller
     {
         private ClinicContext db = new ClinicContext();

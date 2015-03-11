@@ -16,10 +16,18 @@
 
 <div class="row">
     <div class="col-md-offset-1 col-md-10">
-        <a class="btn btn-success pull-right" href="@Url.Action("Create")">
+        @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyInventory"))
+        {
+          <a class="btn btn-success pull-right" href="@Url.Action("Create")">
             <span class="glyphicon glyphicon-plus-sign"></span>
             Add Supplier
-        </a>
+          </a>  
+        }
+        else if (Request.IsAuthenticated && User.IsInRole("CanViewInventory"))
+        {
+            <p>You don't have permission to add new Suppliers</p>
+        }
+        
     </div>
 </div>
 

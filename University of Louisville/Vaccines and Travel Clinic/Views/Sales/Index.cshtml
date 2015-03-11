@@ -15,12 +15,17 @@
 <hr />
 
 <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-        <a class="btn btn-success pull-right" href="@Url.Action("Create")">
-            <span class="glyphicon glyphicon-plus-sign"></span>
-            Add Sale
-        </a>
-    </div>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyInventory"))
+{
+    <a class="btn btn-success pull-right" href="@Url.Action("Create")">
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        Add Sale
+    </a>
+}
+else if (Request.IsAuthenticated && User.IsInRole("CanViewInventory"))
+{
+    <p>You don't have permission to add new Sales.</p>
+}
 </div>
 
 <div class="row">&nbsp;</div>
@@ -65,27 +70,41 @@
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-cog text-warning"></span> <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                        <li>
-                            <a href="@Url.Action("Details", new { id = item.ID })">
-                                <span class="glyphicon glyphicon-comment"></span>
-                                Details
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Edit", new { id = item.ID })">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                Edit
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="@Url.Action("Delete", new { id = item.ID })">
-                                <span class="glyphicon glyphicon-remove"></span>
-                                Delete
-                            </a>
-                        </li>
-                    </ul>
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyInventory"))
+{
+    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        <li>
+            <a href="@Url.Action("Details", new { id = item.ID })">
+                <span class="glyphicon glyphicon-comment"></span>
+                Details
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Edit", new { id = item.ID })">
+                <span class="glyphicon glyphicon-pencil"></span>
+                Edit
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="@Url.Action("Delete", new { id = item.ID })">
+                <span class="glyphicon glyphicon-remove"></span>
+                Delete
+            </a>
+        </li>
+    </ul>
+}
+else if (Request.IsAuthenticated && User.IsInRole("CanViewInventory"))
+{
+    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        <li>
+            <a href="@Url.Action("Details", new { id = item.ID })">
+                <span class="glyphicon glyphicon-comment"></span>
+                Details
+            </a>
+        </li>
+    </ul>
+}
                 </div>
             </td>
     </tr>

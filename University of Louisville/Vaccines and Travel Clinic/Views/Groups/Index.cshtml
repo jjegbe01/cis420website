@@ -7,7 +7,14 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyUsers"))
+    {
+        <div>@Html.ActionLink("Create New", "Create")</div>
+    }
+    else if (Request.IsAuthenticated && User.IsInRole("CanViewUsers"))
+    {
+    <p>You don't have permission to create new groups.</p>
+    }
 </p>
 <table class="table">
     <tr>
