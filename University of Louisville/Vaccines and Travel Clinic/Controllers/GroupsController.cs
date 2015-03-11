@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace IdentitySample.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, CanModifyUsers, CanViewUsers")]
     public class GroupsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

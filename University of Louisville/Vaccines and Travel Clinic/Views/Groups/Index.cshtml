@@ -29,9 +29,17 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyUsers"))
+            {
+              <div>@Html.ActionLink("Edit", "Edit", new { id=item.Id })</div>
+              <div>@Html.ActionLink("Details", "Details", new { id=item.Id })</div>
+              <div>@Html.ActionLink("Delete", "Delete", new { id=item.Id })</div>  
+            }
+            else if (Request.IsAuthenticated && User.IsInRole("CanViewUsers"))
+            {
+                <div>@Html.ActionLink("Details", "Details", new { id=item.Id })</div>
+            }
+            
         </td>
     </tr>
 }

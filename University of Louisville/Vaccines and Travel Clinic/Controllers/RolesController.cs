@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace IdentitySample.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, CanModifyUsers, CanViewUsers")]
     public class RolesController : Controller
     {
         public RolesController()
