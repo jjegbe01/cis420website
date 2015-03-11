@@ -50,7 +50,7 @@
                             <li>@Html.ActionLink("Our Partners", "Partners", "Home")</li>
                         </ul>
                     </li>
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyUsers") || User.IsInRole("CanViewUsers") )
                     {
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="caret"></span></a>

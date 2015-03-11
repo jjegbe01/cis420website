@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace IdentitySample.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, CanModifyUsers, CanViewUsers")]
     public class UsersController : Controller
     {
         public UsersController()
