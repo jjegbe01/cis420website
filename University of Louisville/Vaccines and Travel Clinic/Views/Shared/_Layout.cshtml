@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - University of Louisville Vaccines and Travel</title>
-    <link href="~/Content/calendar.css" rel="stylesheet" type="text/css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -31,8 +30,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    
-                    
+                    <li>@Html.ActionLink("Appointments", "Index", "Appointment")</li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services <span class="caret"></span></a>
@@ -52,8 +50,6 @@
                             <li>@Html.ActionLink("Our Partners", "Partners", "Home")</li>
                         </ul>
                     </li>
-
-                   
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <li class="dropdown">
@@ -62,7 +58,6 @@
                                 <li>@Html.ActionLink("Users", "Index", "Users")</li>
                                 <li>@Html.ActionLink("Groups", "Index", "Groups")</li>
                                 <li>@Html.ActionLink("Permissions", "Index", "Roles")</li>
-                               
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -80,7 +75,6 @@
                                 <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
                             </ul>
                         </li>
-                        <li>@Html.ActionLink("Calendar", "Index", "Calendar")</li>
                         <li><a href="https://cardmaillouisville.sharepoint.com/_layouts/groupstatus.aspx?id=3538531e-3deb-4930-8277-48afd53b8b83&target=documents" target="_blank">OneDrive</a></li>
                     }
                 </ul>
