@@ -52,13 +52,8 @@
                             <li>@Html.ActionLink("Our Partners", "Partners", "Home")</li>
                         </ul>
                     </li>
-<<<<<<< HEAD
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyUsers") || User.IsInRole("CanViewUsers") || User.IsInRole("CanModifyInventory") || User.IsInRole("CanViewInventory") )
-=======
 
-                   
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
->>>>>>> c7c33f9c63282375f7805d6932966007945b5d1e
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyUsers") || User.IsInRole("CanViewUsers") || User.IsInRole("CanModifyInventory") || User.IsInRole("CanViewInventory") )
                     {
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="caret"></span></a>
