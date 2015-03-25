@@ -1,0 +1,97 @@
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+<h2>Dashboard</h2>
+
+<div class="col-md-offset-0">
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <div id="line-chart"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div id="area-chart"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <div id="donut-chart"></div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div id="bar-chart"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    Morris.Line({
+        element: 'line-chart',
+        data: [
+            { year: '2010', item1: 100, item2: 90 },
+            { year: '2011', item1: 80, item2: 40 },
+            { year: '2012', item1: 60, item2: 30 },
+            { year: '2013', item1: 45, item2: 30 },
+            { year: '2014', item1: 30, item2: 20 },
+            { year: '2015', item1: 20, item2: 15 }
+        ],
+        xkey: 'year',
+        ykeys: ['item1', 'item2'],
+        labels: ['Patients', 'Vaccines'],
+        hideHover: 'auto',
+        resize: true,
+    });
+
+    Morris.Donut({
+        element: 'donut-chart',
+        data: [
+            { label: 'Sales In 2010', value: 100 },
+            { label: 'Sales In 2011', value: 80 },
+            { label: 'Sales In 2012', value: 60 },
+            { label: 'Sales In 2013', value: 45 },
+            { label: 'Sales In 2014', value: 30 },
+            { label: 'Sales In 2015', value: 20 }
+        ],
+        hideHover: 'auto',
+        resize: true,
+    });
+
+    Morris.Area({
+        element: 'area-chart',
+        data: [
+            { year: '2010', item1: 100, item2: 90 },
+            { year: '2011', item1: 80, item2: 40 },
+            { year: '2012', item1: 60, item2: 30 },
+            { year: '2013', item1: 45, item2: 30 },
+            { year: '2014', item1: 30, item2: 20 },
+            { year: '2015', item1: 20, item2: 15 }
+        ],
+        xkey: 'year',
+        ykeys: ['item1', 'item2'],
+        labels: ['Patients', 'Vaccines'],
+        hideHover: 'auto',
+        resize: true,
+    });
+
+    Morris.Bar({
+        element: 'bar-chart',
+        data: [
+            { year: '2010', item1: 100, item2: 90 },
+            { year: '2011', item1: 80, item2: 40 },
+            { year: '2012', item1: 60, item2: 30 },
+            { year: '2013', item1: 45, item2: 30 },
+            { year: '2014', item1: 30, item2: 20 },
+            { year: '2015', item1: 20, item2: 15 }
+        ],
+        xkey: 'year',
+        ykeys: ['item1', 'item2'],
+        labels: ['Patients', 'Vaccines'],
+        hideHover: 'auto',
+        resize: true,
+    })
+</script>

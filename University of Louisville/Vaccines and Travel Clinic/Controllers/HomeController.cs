@@ -66,10 +66,12 @@ namespace IdentitySample.Controllers
 
             return View();
         }
-
-       
         
+        public ActionResult Dashboard()
+        {
+            ViewBag.Message = "Your dashboard page.";
 
-
+            return View();
+        }
     }
 }
