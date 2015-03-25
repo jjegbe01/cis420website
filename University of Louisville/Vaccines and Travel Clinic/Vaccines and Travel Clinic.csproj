@@ -423,6 +423,7 @@
     <Content Include="Views\Appointment\Details.cshtml" />
     <Content Include="Views\Appointment\Summary.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
