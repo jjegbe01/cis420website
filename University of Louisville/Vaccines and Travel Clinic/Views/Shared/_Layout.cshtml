@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - University of Louisville Vaccines and Travel</title>
     <link href="~/Content/calendar.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -88,26 +89,95 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <div class="container-fluid">
-                <p style="text-align:right">
-                    Vaccine and International Travel Center<br />
-                    Located in the 550 Clinic<br />
-                    550 S. Jackson Street<br />
-                    Ambulatory Care Building, 2nd Floor <br />
-                    Louisville, KY  40202<br />
-                    <a class="btn btn-xs btn-primary" href="@Url.Action("Contact", "Home")">Google Maps</a>
-                </p>
-                <p style="text-align:center">&copy; @DateTime.Now.Year - University of Louisville, Division of Infectious Diseases. All Rights Reserved.</p>
-            </div>
-        </footer>
-    </div>
+    </div>   
+    <div class="site-content">       
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer class="footer-section" id="footer">
+                <div class="col-md-3">
+                        <p>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-square-o fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x"></i>
+                        </span>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x"></i>
+                            </span>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x"></i>
+                            </span>
+                            <br />
+
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-tumblr fa-stack-1x"></i>
+                            </span>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-pinterest fa-stack-1x"></i>
+                            </span>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x"></i>
+                            </span>
+
+                            <br />
+
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-cc-paypal fa-stack-1x"></i>
+                            </span>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-cc-visa fa-stack-1x"></i>
+                            </span>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-cc-discover fa-stack-1x"></i>
+                            </span>
+
+                            <br />
+
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-html5 fa-stack-1x"></i>
+                            </span>        
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-css3 fa-stack-1x"></i>
+                            </span>    
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square-o fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x"></i>
+                            </span>               
+                    </p>
+                </div>
+                <div class="col-md-9">
+                    <p class="footer-text" style="text-align:right">
+                        Vaccine and International Travel Center<br />
+                        Located in the 550 Clinic<br />
+                        550 S. Jackson Street<br />
+                        Ambulatory Care Building, 2nd Floor <br />
+                        Louisville, KY  40202<br />
+                        <a class="btn btn-xs btn-primary" href="@Url.Action("Contact", "Home")">Google Maps</a>
+                    </p>
+                </div>  
+                <br />    
+                <p class="footer-text" style="text-align:left">&copy; @DateTime.Now.Year - University of Louisville, Division of Infectious Diseases. All Rights Reserved.</p>                                  
+            </footer>
+        </div>
+        </div>
+
+
+
+
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
