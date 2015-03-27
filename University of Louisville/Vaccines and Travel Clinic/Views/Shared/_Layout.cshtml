@@ -56,8 +56,6 @@
                     
                     <li>@Html.ActionLink("Dashboard", "Dashboard", "Home")</li>
 
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("CanModifyUsers") || User.IsInRole("CanViewUsers") || User.IsInRole("CanModifyInventory") || User.IsInRole("CanViewInventory") )
-                    {
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -84,7 +82,7 @@
                         </li>
                         <li>@Html.ActionLink("Calendar", "Index", "Calendar")</li>
                         <li><a href="https://cardmaillouisville.sharepoint.com/_layouts/groupstatus.aspx?id=3538531e-3deb-4930-8277-48afd53b8b83&target=documents" target="_blank">OneDrive</a></li>
-                    }
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -95,66 +93,6 @@
             @RenderBody()
             <hr />
             <footer class="footer-section" id="footer">
-                <div class="col-md-3">
-                        <p>
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-square-o fa-stack-2x"></i>
-                            <i class="fa fa-twitter fa-stack-1x"></i>
-                        </span>
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x"></i>
-                            </span>
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-linkedin fa-stack-1x"></i>
-                            </span>
-                            <br />
-
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-tumblr fa-stack-1x"></i>
-                            </span>
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-pinterest fa-stack-1x"></i>
-                            </span>
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-instagram fa-stack-1x"></i>
-                            </span>
-
-                            <br />
-
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-cc-paypal fa-stack-1x"></i>
-                            </span>
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-cc-visa fa-stack-1x"></i>
-                            </span>
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-cc-discover fa-stack-1x"></i>
-                            </span>
-
-                            <br />
-
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-html5 fa-stack-1x"></i>
-                            </span>        
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-css3 fa-stack-1x"></i>
-                            </span>    
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x"></i>
-                            </span>               
-                    </p>
-                </div>
                 <div class="col-md-9">
                     <p class="footer-text" style="text-align:right">
                         Vaccine and International Travel Center<br />
