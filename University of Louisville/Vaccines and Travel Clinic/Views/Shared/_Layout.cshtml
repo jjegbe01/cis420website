@@ -56,6 +56,8 @@
                     
                     <li>@Html.ActionLink("Dashboard", "Dashboard", "Home")</li>
 
+                    @if(Request.IsAuthenticated && User.IsInRole("Admin"))
+                    { 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -80,6 +82,40 @@
                                 <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
                             </ul>
                         </li>
+                    }
+                    
+                    @if (Request.IsAuthenticated && User.IsInRole("CanModifyUsers") || User.IsInRole("CanViewUsers"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Users", "Index", "Users")</li>
+                                <li>@Html.ActionLink("Groups", "Index", "Groups")</li>
+                                <li>@Html.ActionLink("Permissions", "Index", "Roles")</li>
+                               
+                            </ul>
+                        </li>
+                    }
+                    
+                    @if (Request.IsAuthenticated && User.IsInRole("CanModifyInventory") || User.IsInRole("CanViewInventory"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Inventory <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Suppliers", "Index", "Suppliers")</li>
+                                <li>@Html.ActionLink("Orders", "Index", "Orders")</li>
+                                <li>@Html.ActionLink("Order Lines", "Index", "OrderLines")</li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink("Items", "Index", "Items")</li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink("Sale Lines", "Index", "SaleLines")</li>
+                                <li>@Html.ActionLink("Sale", "Index", "Sales")</li>
+                                <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
+                                <li>@Html.ActionLink("Customers", "Index", "Customers")</li>
+                            </ul>
+                        </li>
+                    }
+
                         <li>@Html.ActionLink("Calendar", "Index", "Calendar")</li>
                         <li><a href="https://cardmaillouisville.sharepoint.com/_layouts/groupstatus.aspx?id=3538531e-3deb-4930-8277-48afd53b8b83&target=documents" target="_blank">OneDrive</a></li>
                     
