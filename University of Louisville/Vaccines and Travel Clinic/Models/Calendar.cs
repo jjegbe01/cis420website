@@ -26,5 +26,11 @@ namespace Vaccines_and_Travel_Clinic.Models
 
         [DHXJson(Alias = "end_date")]
         public DateTime EndDate { get; set; }
+
+        [DHXJson(Alias = "room")]
+        public string Room { get; set; }
+
+        [DHXJson(Alias = "patient_id")]
+        public int patientID { get; set; }
     }
 }

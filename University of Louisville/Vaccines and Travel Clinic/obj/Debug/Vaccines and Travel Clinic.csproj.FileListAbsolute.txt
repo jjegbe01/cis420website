@@ -394,7 +394,6 @@ C:\Users\Alex\Documents\cis420website\University of Louisville\Vaccines and Trav
 C:\Users\Alex\Documents\cis420website\University of Louisville\Vaccines and Travel Clinic\bin\System.Web.WebPages.xml
 C:\Users\Alex\Documents\cis420website\University of Louisville\Vaccines and Travel Clinic\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Alex\Documents\cis420website\University of Louisville\Vaccines and Travel Clinic\bin\System.Web.WebPages.Razor.xml
-C:\Users\Alex\Documents\cis420website\University of Louisville\Vaccines and Travel Clinic\obj\Debug\Vaccines and Travel Clinic.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Documents\cis420website\University of Louisville\Vaccines and Travel Clinic\obj\Debug\Vaccines_and_Travel_Clinic.dll
 C:\Users\Alex\Documents\cis420website\University of Louisville\Vaccines and Travel Clinic\obj\Debug\Vaccines_and_Travel_Clinic.pdb
 C:\Users\Julian\Documents\GitHub\cis420website\University of Louisville\Vaccines and Travel Clinic\bin\DHTMLX.dll
